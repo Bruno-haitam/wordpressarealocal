@@ -9,13 +9,13 @@ if (!defined('ABSPATH')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, ">
-    <title>Landing Page Moderno</title>
+    <title>Teste Arealocal</title>
     <?php wp_head(); ?>
 </head>
 <body>
     <header>
     <div style="background-color: #0073aa; ">
 
-        <h1>Compartilhe Sua História</h1>
-        <p>Preencha o formulário abaixo para criar um post no blog e compartilhar sua experiência com nossa comunidade.</p>
+        <h1>Teste Arealocal</h1>
+        <p>Blog Mais aleatorio</p>
     </header>

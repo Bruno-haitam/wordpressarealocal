@@ -10,7 +10,7 @@ get_header();
 ?>
 
 <!-- Define o estilo inline no body -->
-<div style="background-color: #121212; color: white; min-height: 100vh;">
+<div style="background-color: #1236; color: #1236; min-height: 100vh;">
 
     <!-- Inclui o formulário de postagem -->
     <?php include('formulario.php'); ?>
