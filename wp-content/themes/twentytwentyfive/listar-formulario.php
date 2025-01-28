@@ -1,20 +1,20 @@
 <?php
 function display_custom_post_list() {
-    // Configurações da query para buscar posts
+    
     $args = [
         'post_type'      => 'post',
         'post_status'    => 'publish',
-        'posts_per_page' => 9, // Limita a 9 posts
+        'posts_per_page' => 9, 
         'orderby'        => 'date',
         'order'          => 'DESC',
     ];
 
     $query = new WP_Query($args);
 
-    // Verifica se há posts
+
     if ($query->have_posts()) {
         ?>
-        <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 1200px; margin: auto; text-align: center; background-color: #000; color: #fff; border-radius: 15px;">
+        <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 1200px; margin: auto; text-align: center; background-color: #1236; color: #fff; border-radius: 15px;">
             <h1 style="color: #fff; font-size: 2.5rem; margin-bottom: 20px;">Posts Recentes</h1>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 20px;">
                 <?php
@@ -41,17 +41,17 @@ function display_custom_post_list() {
             </div>
         </div>
 
-        <!-- Adiciona CSS para animação -->
+        
         <style>
             .post-image:hover {
-                transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% */
+                transform: scale(1.1); 
             }
         </style>
         <?php
         wp_reset_postdata();
     } else {
         ?>
-        <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: auto; text-align: center; background-color: #000; color: #fff; border-radius: 15px;">
+        <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: auto; text-align: center; background-color: #1236; color: #fff; border-radius: 15px;">
             <h1 style="color: #fff; font-size: 2.5rem; margin-bottom: 20px;">Posts Recentes</h1>
             <p style="color: #fff; font-size: 1.1rem;">Nenhum post foi encontrado. Seja o primeiro a compartilhar uma história!</p>
         </div>
@@ -59,7 +59,7 @@ function display_custom_post_list() {
     }
 }
 
-// Chama a função para exibir a listagem no lugar desejado
+
 display_custom_post_list();
 
 ?>

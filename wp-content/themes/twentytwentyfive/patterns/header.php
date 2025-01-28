@@ -1,5 +1,5 @@
 <?php
-// Garante que o arquivo não seja acessado diretamente
+
 if (!defined('ABSPATH')) {
     exit;
 }

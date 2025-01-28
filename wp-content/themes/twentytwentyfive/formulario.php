@@ -1,20 +1,20 @@
 <?php
-// Função para processar o formulário e criar um post
+
 function process_custom_post_form() {
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['custom_post_submit'])) {
-        $errors = []; // Array para armazenar erros
+        $errors = []; 
 
-        // Validação do título
+        
         if (empty($_POST['post_title']) || strlen($_POST['post_title']) < 3 || strlen($_POST['post_title']) > 100) {
             $errors[] = 'O título deve ter entre 3 e 100 caracteres.';
         }
 
-        // Validação do conteúdo
+        
         if (empty($_POST['post_content']) || strlen($_POST['post_content']) < 10 || strlen($_POST['post_content']) > 1000) {
             $errors[] = 'O conteúdo deve ter entre 10 e 1000 caracteres.';
         }
 
-        // Validação da imagem
+      
         if (empty($_FILES['post_image']['name'])) {
             $errors[] = 'Você precisa selecionar uma imagem.';
         } else {
@@ -25,13 +25,13 @@ function process_custom_post_form() {
             }
         }
 
-        // Se houver erros, exibe-os
+        
         if (!empty($errors)) {
             foreach ($errors as $error) {
                 echo '<p style="color: red; text-align: center;">' . $error . '</p>';
             }
         } else {
-            // Processa o post, pois tudo foi validado
+    
             $title = sanitize_text_field($_POST['post_title']);
             $content = sanitize_textarea_field($_POST['post_content']);
             $image = $_FILES['post_image'];
@@ -45,7 +45,7 @@ function process_custom_post_form() {
             $post_id = wp_insert_post($post_data);
 
             if ($post_id && !is_wp_error($post_id)) {
-                // Insere a imagem destacada
+            
                 require_once ABSPATH . 'wp-admin/includes/file.php';
                 $upload = wp_handle_upload($image, ['test_form' => false]);
                 if (!isset($upload['error'])) {
@@ -70,15 +70,15 @@ function process_custom_post_form() {
     }
 }
 
-// Função para exibir o formulário com design de landing page
+
 function display_custom_post_form() {
     ?>
     <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: auto; text-align: center;">
-        <h1 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Compartilhe Sua História</h1>
+        <h1 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Compartilhe Suas Conquistas</h1>
         <p style="color: #666; font-size: 1.1rem; margin-bottom: 30px;">
-            Preencha o formulário abaixo para criar um post no blog e compartilhar sua experiência com nossa comunidade.
+            Preencha o formulário abaixo para criar um post no blog e compartilhar suas experiência com nossa comunidade.
         </p>
-        <form method="POST" enctype="multipart/form-data" style="background: #f9f9f9; border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
+        <form method="POST" enctype="multipart/form-data" style="background: #1236; border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
             <div style="margin-bottom: 20px;">
                 <label for="post_title" style="display: block; font-weight: bold; margin-bottom: 5px;">Título:</label>
                 <input type="text" name="post_title" id="post_title" placeholder="Digite o título do post" required 
@@ -105,16 +105,16 @@ function display_custom_post_form() {
     <?php
 }
 
-// Processa o formulário antes de exibir o conteúdo
+
 process_custom_post_form();
 
-// Chama a função para exibir o formulário no lugar desejado
+
 display_custom_post_form();
 ?>
 
 
 <?php
-// Garante que o arquivo não seja acessado diretamente.
+
 if (!defined('ABSPATH')) {
     exit;
 }
