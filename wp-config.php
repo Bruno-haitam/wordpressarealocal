@@ -20,22 +20,25 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'arealocal' );
+define( 'DB_NAME', 'areadeprojetos06' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'areadeprojetos06' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'ede22092512br' );
+define( 'DB_PASSWORD', 'm1n1s9' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', 'mysql16-farm2.uni5.net' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+define('WP_HOME', 'http://areadeprojetos.com.br/areadeprojetos06');
+define('WP_SITEURL', 'http://areadeprojetos.com.br/areadeprojetos06');
 
 /**#@+
  * Authentication unique keys and salts.
