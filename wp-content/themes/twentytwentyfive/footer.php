@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<footer>
-    <p style="text-align: center; color: #666; background-color: #0073aa; ">&copy; 2025 BlogEssencial.</p>
+<footer style="margin-top: 10px;">
+    <p style="text-align: center; color: #000; background-color: #0073aa;">&copy; 2025 Bruno Henrique Bitellbrunn.</p>
 </footer>
 
 <?php wp_footer(); ?>

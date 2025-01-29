@@ -73,12 +73,40 @@ function process_custom_post_form() {
 
 function display_custom_post_form() {
     ?>
+    <style>
+        
+        .form-container {
+            background: #1236;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .submit-btn {
+            background-color: #0073aa;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        
+        .submit-btn:hover {
+            background-color: #009be3;
+            transform: scale(1.05);
+        }
+    </style>
+
     <div class="landing-page-container" style="font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: auto; text-align: center;">
         <h1 style="color: #333; font-size: 2.5rem; margin-bottom: 20px;">Compartilhe Suas Conquistas</h1>
         <p style="color: #666; font-size: 1.1rem; margin-bottom: 30px;">
-            Preencha o formulário abaixo para criar um post no blog e compartilhar suas experiência com nossa comunidade.
+            Preencha o formulário abaixo para criar um post no blog e compartilhar suas experiências com nossa comunidade.
         </p>
-        <form method="POST" enctype="multipart/form-data" style="background: #1236; border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
+        <form method="POST" enctype="multipart/form-data" class="form-container">
             <div style="margin-bottom: 20px;">
                 <label for="post_title" style="display: block; font-weight: bold; margin-bottom: 5px;">Título:</label>
                 <input type="text" name="post_title" id="post_title" placeholder="Digite o título do post" required 
@@ -96,8 +124,7 @@ function display_custom_post_form() {
                 <input type="file" name="post_image" id="post_image" accept="image/*" required 
                        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
             </div>
-            <button type="submit" name="custom_post_submit" 
-                    style="background-color: #0073aa; color: white; padding: 15px 20px; font-size: 1.1rem; border: none; border-radius: 5px; cursor: pointer;">
+            <button type="submit" name="custom_post_submit" class="submit-btn">
                 Publicar Agora
             </button>
         </form>
@@ -118,3 +145,4 @@ display_custom_post_form();
 if (!defined('ABSPATH')) {
     exit;
 }
+?>
